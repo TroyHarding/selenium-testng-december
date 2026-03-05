@@ -1,4 +1,4 @@
-package tests;
+package org.demo.tests;
 
 import org.demo.pages.Base;
 import org.demo.pages.RegisterPage;

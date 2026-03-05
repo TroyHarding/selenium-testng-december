@@ -1,4 +1,4 @@
-package tests;
+package org.demo.tests;
 
 import org.demo.pages.BYOCPage;
 import org.demo.pages.Base;
