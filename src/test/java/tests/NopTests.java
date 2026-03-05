@@ -1,7 +1,7 @@
-package org.nop.tests;
+package tests;
 
-import org.nop.base.Base;
-import org.nop.pages.RegisterPage;
+import base.Base;
+import pages.RegisterPage;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
