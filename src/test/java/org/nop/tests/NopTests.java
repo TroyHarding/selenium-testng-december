@@ -1,12 +1,10 @@
-package org.demo.tests;
+package org.nop.tests;
 
-import org.demo.pages.Base;
-import org.demo.pages.RegisterPage;
+import org.nop.base.Base;
+import org.nop.pages.RegisterPage;
 import org.openqa.selenium.By;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.awt.geom.RectangularShape;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;

@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f3ee70b-aee6-46f8-b8e1-968acdffd0f7" name="Changes" comment="EFFIT WE BALLL!!!" />
+    <list default="true" id="5f3ee70b-aee6-46f8-b8e1-968acdffd0f7" name="Changes" comment="Changed for maven">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/pages/BYOCPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/pages/BYOCPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/pages/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/base/Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/demo/tests/AddtoCartTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/tests/AddtoCartTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/demo/tests/BYOCTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/tests/BYOCTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/demo/tests/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/tests/FirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/demo/tests/NopTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/tests/NopTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/demo/tests/WaitsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nop/tests/WaitsTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,33 +56,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.AddtoCartTests.addToCart (1).executor": "Run",
-    "TestNG.AddtoCartTests.addToCart.executor": "Run",
-    "TestNG.BYOCTests.addtoCartTest.executor": "Run",
-    "TestNG.BYOCTests.displayTest.executor": "Debug",
-    "TestNG.E2E.e2e.executor": "Run",
-    "TestNG.E2ETests.E2ETests.executor": "Run",
-    "TestNG.FirstTest.executor": "Run",
-    "TestNG.FirstTest.firstTest.executor": "Run",
-    "TestNG.NopTests.registerTest.executor": "Run",
-    "TestNG.WaitsTests.aboutUsTest.executor": "Run",
-    "TestNG.WaitsTests.clickEachCategoryTest.executor": "Debug",
-    "TestNG.WaitsTests.contactUsTest.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/icekingoz/IDEA Projects/selenium-testng-december/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.AddtoCartTests.addToCart (1).executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AddtoCartTests.addToCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.BYOCTests.addtoCartTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.BYOCTests.displayTest.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.E2E.e2e.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.E2ETests.E2ETests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FirstTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FirstTest.firstTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NopTests.registerTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WaitsTests.aboutUsTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WaitsTests.clickEachCategoryTest.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.WaitsTests.contactUsTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/icekingoz/IDEA Projects/selenium-testng-december/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="TestNG.AddtoCartTests.addToCart (1)">
     <configuration name="AddtoCartTests.addToCart (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-testng-december" />
@@ -95,12 +106,12 @@
       <module name="selenium-testng-december" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.demo.tests.*" />
+          <option name="PATTERN" value="org.nop.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.demo.tests" />
-      <option name="MAIN_CLASS_NAME" value="org.demo.tests.BYOCTests" />
+      <option name="MAIN_CLASS_NAME" value="org.nop.tests.BYOCTests" />
       <option name="METHOD_NAME" value="addtoCartTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -113,12 +124,12 @@
       <module name="selenium-testng-december" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.demo.tests.*" />
+          <option name="PATTERN" value="org.nop.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.demo.tests" />
-      <option name="MAIN_CLASS_NAME" value="org.demo.tests.BYOCTests" />
+      <option name="MAIN_CLASS_NAME" value="org.nop.tests.BYOCTests" />
       <option name="METHOD_NAME" value="displayTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -131,7 +142,7 @@
       <module name="selenium-testng-december" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.demo.tests.*" />
+          <option name="PATTERN" value="org.nop.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,12 +160,12 @@
       <module name="selenium-testng-december" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.demo.tests.*" />
+          <option name="PATTERN" value="org.nop.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.demo.tests" />
-      <option name="MAIN_CLASS_NAME" value="org.demo.tests.NopTests" />
+      <option name="MAIN_CLASS_NAME" value="org.nop.tests.NopTests" />
       <option name="METHOD_NAME" value="registerTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -276,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772680882074</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed for maven">
+      <option name="closed" value="true" />
+      <created>1772681470358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1772681470358</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +318,7 @@
     <MESSAGE value="Delete these files" />
     <MESSAGE value="push all pf the changes up" />
     <MESSAGE value="EFFIT WE BALLL!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="EFFIT WE BALLL!!!" />
+    <MESSAGE value="Changed for maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed for maven" />
   </component>
 </project>

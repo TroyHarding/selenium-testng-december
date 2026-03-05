@@ -1,8 +1,7 @@
-package org.demo.tests;
+package org.nop.tests;
 
-import org.demo.pages.BYOCPage;
-import org.demo.pages.Base;
-import org.openqa.selenium.By;
+import org.nop.pages.BYOCPage;
+import org.nop.base.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;

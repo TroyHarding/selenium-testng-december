@@ -1,9 +1,9 @@
-package org.demo.tests;
+package org.nop.tests;
 
-import org.demo.pages.BYOCPage;
-import org.demo.pages.Base;
-import org.demo.pages.CartPage;
-import org.demo.pages.HomePage;
+import org.nop.pages.BYOCPage;
+import org.nop.base.Base;
+import org.nop.pages.CartPage;
+import org.nop.pages.HomePage;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;

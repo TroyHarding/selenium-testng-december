@@ -1,4 +1,4 @@
-package org.demo.pages;
+package org.nop.pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;

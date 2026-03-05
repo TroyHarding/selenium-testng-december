@@ -1,4 +1,4 @@
-package org.demo.pages;
+package org.nop.base;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
