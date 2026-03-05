@@ -18,6 +18,7 @@ public class AddtoCartTests extends Base {
 //        4. Go to cart
 //        5. Verify All the info (Product, Price, QTY Total, Delete)
         goToPage();
+        logger.info("I AM LOG!!!!");
         HomePage homePage = new HomePage(driver);
         homePage.clickCategory("Computers");
         homePage.clickSubCategory("Desktops");

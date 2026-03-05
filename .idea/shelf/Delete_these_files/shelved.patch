@@ -1,0 +1,82 @@
+Index: src/main/java/org/demo/tests/E2E.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/demo/tests/E2E.java b/src/main/java/org/demo/tests/E2E.java
+new file mode 100644
+--- /dev/null	(date 1770087189901)
++++ b/src/main/java/org/demo/tests/E2E.java	(date 1770087189901)
+@@ -0,0 +1,72 @@
++package org.demo.tests;
++
++import org.demo.pages.Base;
++import org.openqa.selenium.Alert;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.ui.ExpectedConditions;
++import org.testng.annotations.Test;
++
++import java.util.List;
++
++import static org.testng.Assert.*;
++
++public class E2E extends Base {
++
++    @Test
++    public void e2e() throws InterruptedException {
++        driver.get("https://www.demoblaze.com/index.html");
++        clickProduct("Samsung galaxy s6");
++        //driver.switchTo().alert().accept();
++        driver.navigate().to("https://www.demoblaze.com/index.html");
++        clickProduct("Nokia lumia 1520");
++        driver.findElement(By.cssSelector("#cartur")).click();
++//        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("tr[class='success']")));
++//        List<WebElement> webElements = driver.findElements(By.xpath("//a[normalize-space()='Delete']"));
++//        webElements.getFirst().click();
++        deleteItem("Samsung galaxy s6");
++        Thread.sleep(1000);
++        WebElement placeOrder = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn.btn-success")));
++        placeOrder.click();
++        //TODO Fill out the form
++        fillOutPlaceOderForm();
++        //Assertions must happen in the test case
++        //        actual, expected
++        WebElement animatedButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".sa-icon.sa-success.animate")));
++        assertTrue( animatedButton.isDisplayed(),"Animated button is not displayed");
++        assertTrue(driver.findElement(By.cssSelector(".lead.text-muted")).getText().contains("Bob Thorton"),"Error Message");
++
++    }
++
++    public void clickProduct(String productName) {
++        driver.findElement(By.xpath("//a[normalize-space()='" + productName + "']")).click();
++        WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".btn.btn-success.btn-lg")));
++        button.click();
++        Alert a1 = wait.until(ExpectedConditions.alertIsPresent());
++        a1.accept();
++    }
++
++    public void deleteItem(String itemName) {
++        WebElement table = driver.findElement(By.id("tbodyid"));
++        List<WebElement> rows = table.findElements(By.tagName("tr"));
++        for (WebElement row : rows) {
++            if (row.getText().contains(itemName)) {
++                row.findElement(By.xpath("//a[text()='Delete']")).click();
++                break;
++            }
++        }
++    }
++
++    public void fillOutPlaceOderForm() {
++        WebElement purchase = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[onclick='purchaseOrder()']")));
++        driver.findElement(By.cssSelector("#name")).sendKeys("Bob Thorton");
++        driver.findElement(By.cssSelector("#country")).sendKeys("Portlandia");
++        driver.findElement(By.cssSelector("#city")).sendKeys("Porttown");
++        driver.findElement(By.cssSelector("#card")).sendKeys("12345");
++        driver.findElement(By.cssSelector("#month")).sendKeys("04");
++        driver.findElement(By.cssSelector("#year")).sendKeys("1969");
++        purchase.click();
++    }
++
++
++}

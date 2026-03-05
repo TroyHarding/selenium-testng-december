@@ -1,5 +1,7 @@
 package org.demo.pages;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,6 +14,7 @@ public abstract class Base {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Logger logger = LoggerFactory.getLogger(getClass());
 
     @BeforeClass
     public void beforeClass(){
