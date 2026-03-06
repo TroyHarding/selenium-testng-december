@@ -11,32 +11,35 @@ import static org.testng.Assert.assertTrue;
 public class AddtoCartTests extends Base {
 
     @Test
-    public void addToCart() throws InterruptedException {
-//        1. Go to Nop
-//        2. Click on Computers > Desktop > BYOC
-//        3. Fill out info and add to cart
-//        4. Go to cart
-//        5. Verify All the info (Product, Price, QTY Total, Delete)
+    public void addToCart() {
         goToPage();
         logger.info("I AM LOG!!!!");
-        HomePage homePage = new HomePage(driver);
-
-        Thread.sleep(3000);
-        homePage.clickCategory("Computers");
-
-        Thread.sleep(3000);
-        homePage.clickSubCategory("Desktops");
-
-        Thread.sleep(3000);
-        homePage.clickProduct("Build your own computer");
+    
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    
+        By computersTopMenu = By.xpath("//ul[contains(@class,'top-menu')]//a[normalize-space()='Computers']");
+        wait.until(ExpectedConditions.elementToBeClickable(computersTopMenu)).click();
+    
+        wait.until(ExpectedConditions.urlContains("/computers"));
+    
+        By desktopsSubCategory = By.xpath("//h2[@class='title']/a[normalize-space()='Desktops']");
+        wait.until(ExpectedConditions.elementToBeClickable(desktopsSubCategory)).click();
+    
+        By byocProduct = By.xpath("//h2[@class='product-title']/a[normalize-space()='Build your own computer']");
+        wait.until(ExpectedConditions.elementToBeClickable(byocProduct)).click();
+    
         BYOCPage byocPage = new BYOCPage(driver);
         byocPage.byoc();
-        homePage.clickShoppingCart();
+    
+        By shoppingCartLink = By.xpath("//a[contains(@href,'/cart') and (normalize-space()='Shopping cart' or @class='ico-cart')]");
+        wait.until(ExpectedConditions.elementToBeClickable(shoppingCartLink)).click();
+    
         CartPage cartPage = new CartPage(driver);
-//        Verification 1
-        assertTrue(cartPage.getCartProductInfo("Build your own computer").contains("Build your own computer"), "Error");
-//        Validate the Rest
-
+    
+        assertTrue(
+            cartPage.getCartProductInfo("Build your own computer").contains("Build your own computer"),
+            "Error"
+        );
     }
 
 //        Optional Create at test to Update the Cart/
