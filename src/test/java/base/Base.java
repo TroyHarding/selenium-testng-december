@@ -16,6 +16,7 @@ public abstract class Base {
     protected WebDriverWait wait;
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
+
     @BeforeClass
     public void beforeClass(){
         driver = new ChromeDriver();
