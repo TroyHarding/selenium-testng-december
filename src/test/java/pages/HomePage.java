@@ -1,60 +1,40 @@
-package pages;
-
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HomePage {
+import static org.testng.Assert.assertTrue;
 
-    @FindBy(css = ".cart-label")
-    private WebElement shoppingCart;
+@Test
+public void addToCart() {
+    goToPage();
+    logger.info("I AM LOG!!!!");
 
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    public HomePage(WebDriver driver ) {
-        this.driver = driver;
-        this.wait   = new WebDriverWait(driver, Duration.ofSeconds(5));
-        PageFactory.initElements(driver, this);
-    }
+    By computersTopMenu = By.xpath("//ul[contains(@class,'top-menu')]//a[normalize-space()='Computers']");
+    wait.until(ExpectedConditions.elementToBeClickable(computersTopMenu)).click();
 
-    public void open() {
-        driver.get("https://nop-qa.portnov.com/");
-        wait.until(ExpectedConditions.titleIs("Your store. Home page title"));
-    }
+    wait.until(ExpectedConditions.urlContains("/computers"));
 
-    //Create 3 methods: Click on a Category, click on Sub Category, Click on Product
-    public void clickCategory(String category) {
-        driver.findElement(By.linkText(category)).click();
-        wait.until(ExpectedConditions.titleContains(category));
-    }
+    By desktopsSubCategory = By.xpath("//h2[@class='title']/a[normalize-space()='Desktops']");
+    wait.until(ExpectedConditions.elementToBeClickable(desktopsSubCategory)).click();
 
-    public void clickSubCategory(String subCategory) {
-        driver.findElement(By.linkText(subCategory)).click();
-        wait.until(ExpectedConditions.titleContains(subCategory));
-    }
+    By byocProduct = By.xpath("//h2[@class='product-title']/a[normalize-space()='Build your own computer']");
+    wait.until(ExpectedConditions.elementToBeClickable(byocProduct)).click();
 
-    public void clickProduct(String product) {
-//        if (product.equalsIgnoreCase("BYOC")) {
-//            driver.findElement(By.linkText("Build your own computer")).click();
-//        } else {
-//            driver.findElement(By.linkText(product)).click();
-//        }
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", shoppingCart);
-        driver.findElement(By.linkText(product)).click();
-        wait.until(ExpectedConditions.titleContains(product));
-    }
+    BYOCPage byocPage = new BYOCPage(driver);
+    byocPage.byoc();
 
-    public void clickShoppingCart() {
-        shoppingCart.click();
-        wait.until(ExpectedConditions.titleContains("Shopping Cart"));
-    }
+    By shoppingCartLink = By.xpath("//a[contains(@href,'/cart') and (normalize-space()='Shopping cart' or @class='ico-cart')]");
+    wait.until(ExpectedConditions.elementToBeClickable(shoppingCartLink)).click();
 
+    CartPage cartPage = new CartPage(driver);
 
-
+    assertTrue(
+        cartPage.getCartProductInfo("Build your own computer").contains("Build your own computer"),
+        "Error"
+    );
 }
