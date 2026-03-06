@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 public class AddtoCartTests extends Base {
 
     @Test
-    public void addToCart() {
+    public void addToCart() throws InterruptedException {
 //        1. Go to Nop
 //        2. Click on Computers > Desktop > BYOC
 //        3. Fill out info and add to cart
@@ -20,8 +20,14 @@ public class AddtoCartTests extends Base {
         goToPage();
         logger.info("I AM LOG!!!!");
         HomePage homePage = new HomePage(driver);
+
+        Thread.sleep(3000);
         homePage.clickCategory("Computers");
+
+        Thread.sleep(3000);
         homePage.clickSubCategory("Desktops");
+
+        Thread.sleep(3000);
         homePage.clickProduct("Build your own computer");
         BYOCPage byocPage = new BYOCPage(driver);
         byocPage.byoc();
