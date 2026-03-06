@@ -1,12 +1,9 @@
 package tests;
 
 import base.Base;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.annotations.Test;
 import pages.BYOCPage;
 import pages.CartPage;
@@ -21,35 +18,29 @@ public class AddtoCartTests extends Base {
 
     @Test
     public void addToCart() {
+
         goToPage();
         logger.info("I AM LOG!!!!");
 
-        System.out.println("URL: " + driver.getCurrentUrl());
-        System.out.println("Title: " + driver.getTitle());
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        takeScreenshot("before_categories_click");
 
-        // Take screenshot before the failing step
-        takeScreenshot("before_click_computers");
+        By categoriesButton = By.xpath("//strong[text()='Categories']");
+        wait.until(ExpectedConditions.elementToBeClickable(categoriesButton)).click();
 
-        // Click "Computers" from the LEFT Categories block (not the top menu)
-        By computersLeftNav = By.xpath(
-                "//div[contains(@class,'block-category-navigation')]//a[normalize-space()='Computers']"
-        );
-        wait.until(ExpectedConditions.elementToBeClickable(computersLeftNav)).click();
+        By computers = By.xpath("//a[contains(text(),'Computers')]");
+        wait.until(ExpectedConditions.elementToBeClickable(computers)).click();
 
-        // Click "Desktops"
-        By desktops = By.xpath("//h2[@class='title']/a[normalize-space()='Desktops']");
+        By desktops = By.xpath("//a[contains(text(),'Desktops')]");
         wait.until(ExpectedConditions.elementToBeClickable(desktops)).click();
-
-        // Click product "Build your own computer"
-        By byoc = By.xpath("//h2[@class='product-title']/a[normalize-space()='Build your own computer']");
+        
+        By byoc = By.xpath("//h2[@class='product-title']/a[contains(text(),'Build your own computer')]");
         wait.until(ExpectedConditions.elementToBeClickable(byoc)).click();
 
         BYOCPage byocPage = new BYOCPage(driver);
         byocPage.byoc();
 
-        // Go to cart
         By cart = By.cssSelector("a.ico-cart");
         wait.until(ExpectedConditions.elementToBeClickable(cart)).click();
 
@@ -68,7 +59,6 @@ public class AddtoCartTests extends Base {
 
         try {
             FileHandler.copy(src, dest);
-            System.out.println("Screenshot saved: " + dest.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
